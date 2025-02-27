@@ -2,35 +2,63 @@
  * frontend/src/components/News.jsx
  * Sección de noticias destacadas con tarjetas informativas.
  * @version 1.0.0
- * @updated 2025-02-26
+ * @updated 2025-02-27
  */
-import React from "react";
+import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 
 const News = () => {
-  const news = [
+  const [showAll, setShowAll] = useState(false);
+
+  const initialNews = [
     {
       title: "Avances en el sistema de seguridad",
       excerpt:
-        "Se está finalizando la implementación de tecnología en accesos y perímetro para mejorar la seguridad del fraccionamiento y el club.",
+        "Continuaremos con la revisión y actualización de los protocolos de seguridad, implementando tecnología avanzada en accesos y perímetro para mejorar la seguridad del fraccionamiento y el club, garantizando bienestar para todos.",
       date: "18 Feb 2025",
       image: "/img/1.jpg",
     },
     {
       title: "Nuevo boletín mensual: ¿SABÍAS QUÉ?",
       excerpt:
-        "Lanzamos nuestro boletín informativo mensual para mantener a la comunidad informada sobre temas relevantes. ¡No te lo pierdas!",
+        'Proponemos lanzar el boletín mensual "¿Sabías Qué?" para mantener a la comunidad informada sobre temas relevantes, novedades y acciones importantes.',
       date: "10 Feb 2025",
       image: "/img/2.jpg",
     },
     {
       title: "Mejoras en el Bar Hoyo 19",
       excerpt:
-        "Iniciamos el proyecto de mejoramiento del bar del Hoyo 19 para optimizar su servicio y ambiente para todos los socios.",
+        "Proponemos mejorar el Bar Hoyo 19 para optimizar su servicio y crear un ambiente más agradable, brindando una experiencia única a nuestros visitantes.",
       date: "05 Feb 2025",
       image: "/img/3.jpg",
     },
   ];
+
+  const additionalNews = [
+    {
+      title: "Mejoras en la señalética urbana",
+      excerpt:
+        "Continuaremos con la actualización de la señalética urbana conforme a los reglamentos municipales y de protección civil, mejorando la seguridad vial y la estética del fraccionamiento.",
+      date: "01 Feb 2025",
+      image: "/img/4.jpg",
+    },
+    {
+      title: "Nueva estrategia de cuidado de arbolado",
+      excerpt:
+        "Continuaremos con la estrategia de cuidado del arbolado, enfocándonos en prevenir el regreso de plagas y asegurar la salud de nuestros árboles a largo plazo.",
+      date: "28 Ene 2025",
+      image: "/img/5.jpg",
+    },
+    {
+      title: "Re-ingeniería del restaurante",
+      excerpt:
+        "Continuaremos con la reingeniería del restaurante, optimizando los procesos operativos y administrativos para mejorar la experiencia del cliente y aumentar la satisfacción.",
+      date: "20 Ene 2025",
+      image: "/img/6.jpg",
+    },
+  ];
+
+  const news = showAll ? [...initialNews, ...additionalNews] : initialNews;
 
   return (
     <section id="news" className="py-16 bg-gray-50">
@@ -71,12 +99,12 @@ const News = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a
-            href="#"
+          <button
+            onClick={() => setShowAll(!showAll)}
             className="inline-block border border-green-700 text-green-700 px-6 py-3 rounded font-medium hover:bg-green-50 transition"
           >
-            Ver todas las noticias
-          </a>
+            {showAll ? "Ver menos noticias" : "Ver todas las noticias"}
+          </button>
         </div>
       </div>
     </section>

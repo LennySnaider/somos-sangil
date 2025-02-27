@@ -1,9 +1,4 @@
-/**
- * frontend/src/components/Contact.jsx
- * Formulario de contacto e información para comunicarse con el comité.
- * @version 1.0.0
- * @updated 2025-02-26
- */
+// Modificación en src/components/Contact.jsx
 import React from "react";
 
 const Contact = () => {
@@ -48,38 +43,25 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Formulario de contacto */}
-              <div>
-                <h3 className="font-bold text-lg mb-4">Enviar Mensaje</h3>
-                <form>
-                  <div className="mb-4">
-                    <input
-                      type="text"
-                      placeholder="Tu nombre"
-                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      type="email"
-                      placeholder="Tu email"
-                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <textarea
-                      rows="3"
-                      placeholder="Tu mensaje"
-                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800 transition"
-                  >
-                    Enviar Mensaje
-                  </button>
-                </form>
+              {/* Código QR WhatsApp */}
+              <div className="flex flex-col items-center justify-center">
+                <h3 className="font-bold text-lg mb-4">
+                  Contáctanos vía WhatsApp
+                </h3>
+                <div className="mb-4">
+                  <img
+                    src="/img/wa.link_test.png"
+                    alt="WhatsApp QR Code"
+                    className="w-48 h-48 object-contain"
+                    onError={(e) => {
+                      e.target.src = "/api/placeholder/200/200"; // Fallback a imagen placeholder
+                    }}
+                  />
+                </div>
+                <p className="text-center text-gray-600">
+                  Escanea el código QR con tu teléfono para contactarnos por
+                  WhatsApp
+                </p>
               </div>
             </div>
           </div>

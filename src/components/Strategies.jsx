@@ -2,50 +2,97 @@
  * frontend/src/components/Strategies.jsx
  * Muestra de estrategias y proyectos del comité con iconos explicativos.
  * @version 1.0.0
- * @updated 2025-02-26
+ * @updated 2025-02-27
  */
-import React from "react";
+import React, { useState } from "react";
 
 const Strategies = () => {
-  // Datos de las estrategias del comité
-  const strategies = [
+  const [showAll, setShowAll] = useState(false);
+
+  // Estrategias iniciales
+  const initialStrategies = [
     {
       title: "Reglamentos",
       description:
-        "Revisión y actualización de todos los reglamentos de Residencial y del Club",
+        "Continuaremos con la revisión y actualización de los reglamentos, alineándolos con las necesidades actuales y las mejores prácticas para una gestión eficiente.",
       icon: "🔖",
     },
     {
       title: "Vigilancia",
       description:
-        "Finalizar la implementación de tecnología en accesos y perímetro para mejorar la seguridad",
+        "Continuaremos con la revisión y actualización de los protocolos de seguridad, implementando tecnología avanzada en accesos y perímetro para mejorar la seguridad.",
       icon: "🔒",
     },
     {
       title: "Casa Club",
       description:
-        "Inicio de la remodelación de casa Club, por etapas, de acuerdo con el presupuesto",
+        "Proponemos la remodelación de la Casa Club por etapas para mejorar la experiencia y el valor del club, asegurando un espacio más moderno y funcional para todos.",
       icon: "🏢",
     },
     {
       title: "Pozos",
       description:
-        "Renovación de los permisos para asegurar el abastecimiento del recurso más importante",
+        "Continuaremos con la renovación de los permisos de los pozos, asegurando el abastecimiento del recurso más vital, garantizando el acceso al agua para todos.",
       icon: "💧",
     },
     {
       title: "Comunicación",
       description:
-        'Creación del boletín mensual "¿SABÍAS QUÉ?" para mantener informada a la comunidad',
+        'Proponemos lanzar el boletín mensual "¿Sabías Qué?" para mantener a la comunidad informada sobre temas relevantes, novedades y acciones importantes.',
       icon: "📣",
     },
     {
       title: "Transparencia",
       description:
-        "Creación de un portal donde se muestren proyectos, licitaciones y estados financieros",
+        "Continuaremos y proponemos crear un portal de transparencia donde se puedan consultar proyectos, licitaciones, avances de obras y estados financieros.",
       icon: "🔍",
     },
   ];
+
+  // Estrategias adicionales
+  const additionalStrategies = [
+    {
+      title: "Arbolado",
+      description:
+        "Continuaremos con la estrategia de cuidado del arbolado, enfocándonos en prevenir el regreso de plagas y asegurar la salud de nuestros árboles a largo plazo.",
+      icon: "🌳",
+    },
+    {
+      title: "Centro de acopio",
+      description:
+        "Proponemos mejorar el Centro de Acopio para fomentar una comunidad más sustentable y comprometida con el cuidado del medio ambiente.",
+      icon: "♻️",
+    },
+    {
+      title: "Composta",
+      description:
+        "Proponemos un proyecto de generación de composta a partir de los residuos orgánicos de la comunidad, promoviendo prácticas ecológicas y sostenibles.",
+      icon: "🍃",
+    },
+    {
+      title: "Comités",
+      description:
+        "Continuaremos formando comités para atender las problemáticas del fraccionamiento, fomentar la participación activa y dar seguimiento a los existentes.",
+      icon: "👥",
+    },
+    {
+      title: "Adquisiciones",
+      description:
+        "Proponemos la creación de un comité de adquisiciones para fortalecer la supervisión del uso de recursos en asociaciones, asegurando una gestión transparente.",
+      icon: "📊",
+    },
+    {
+      title: "Bar Hoyo 19",
+      description:
+        "Proponemos mejorar el Bar Hoyo 19 para optimizar su servicio y crear un ambiente más agradable, brindando una experiencia única a nuestros visitantes.",
+      icon: "🍸",
+    },
+  ];
+
+  // Combinar estrategias según el estado
+  const strategies = showAll
+    ? [...initialStrategies, ...additionalStrategies]
+    : initialStrategies;
 
   return (
     <section id="strategies" className="py-16 bg-gray-50">
@@ -68,12 +115,12 @@ const Strategies = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a
-            href="#"
+          <button
+            onClick={() => setShowAll(!showAll)}
             className="inline-block bg-green-700 text-white px-6 py-3 rounded font-medium hover:bg-green-800 transition"
           >
-            Ver todas las estrategias
-          </a>
+            {showAll ? "Ver menos estrategias" : "Ver todas las estrategias"}
+          </button>
         </div>
       </div>
     </section>
