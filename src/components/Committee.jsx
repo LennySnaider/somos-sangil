@@ -1,6 +1,6 @@
 /**
  * frontend/src/components/Committee.jsx
- * Presentación del consejo directivo y consejeros del club de golf.
+ * Presentación del Planilla directiva y consejeros del club de golf.
  * @version 1.0.0
  * @updated 2025-02-26
  */
@@ -10,7 +10,7 @@ import { X } from "lucide-react";
 const Committee = () => {
   const [selectedMember, setSelectedMember] = useState(null);
 
-  // Datos del Consejo Directivo principal
+  // Datos del Planilla directiva principal
   const committees = [
     {
       name: "Carlo Alvarez",
@@ -130,10 +130,10 @@ const Committee = () => {
     <section id="committee" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-4">
-          Consejo Directivo
+          Planilla directiva
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Conoce a los integrantes del Consejo Directivo que trabajan para
+          Conoce a los integrantes del Planilla directiva que trabajan para
           mejorar la experiencia de todos los socios del club.
         </p>
 

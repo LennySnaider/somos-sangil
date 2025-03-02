@@ -38,7 +38,7 @@ const WelcomeModal = () => {
 
         <div className="overflow-hidden rounded-lg">
           <img
-            src="/img/popup/aununcio_importante.png"
+            src="/img/popup/aununcio_importante.jpg"
             alt="Anuncio Importante - Somos San Gil"
             className="w-full h-auto"
             onError={(e) => {

@@ -17,7 +17,7 @@ const Header = () => {
           <img src="/img/logo.png" alt="Somos San Gil" className="h-12 mr-3" />
           <h1 className="text-2xl font-bold text-green-700">SOMOS SAN GIL</h1>
           <span className="ml-2 text-sm uppercase tracking-widest">
-            Consejo directivo
+            Planilla directiva
           </span>
         </div>
 

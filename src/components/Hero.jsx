@@ -27,7 +27,7 @@ const Hero = () => {
             SOMOS SAN GIL
           </h2>
           <p className="text-lg mb-6 text-white">
-            Portal oficial del consejo directivo. Sigamos construyendo juntos
+            Portal oficial del Planilla directiva. Sigamos construyendo juntos
             por el bienestar de nuestra comunidad.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
